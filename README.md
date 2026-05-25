@@ -1,12 +1,13 @@
-# Radar-Based Occupancy Grid Mapping for Autonomous Driving
+# Radar Occupancy Grid Learning for Autonomous Driving
 
-Implementation of "Road Scene Understanding by Occupancy Grid Learning from Sparse Radar Clusters using Semantic Segmentation" using the nuScenes dataset and PyTorch.
+PyTorch implementation of occupancy grid learning for autonomous driving using sparse radar clusters from the nuScenes dataset.
 
 ---
 
 ## Overview
 
-This project implements a deep learning-based occupancy grid mapping system using sparse automotive radar data from the nuScenes autonomous driving dataset.  
+This project implements a deep learning-based occupancy grid mapping system using sparse automotive radar data from the nuScenes autonomous driving dataset.
+
 The model reconstructs road scenes in Bird’s Eye View (BEV) using a U-Net-based semantic segmentation architecture trained on LiDAR-derived occupancy labels.
 
 ---
@@ -26,6 +27,12 @@ The model reconstructs road scenes in Bird’s Eye View (BEV) using a U-Net-base
 ## Methodology
 
 ![Pipeline](assets/pipeline.png)
+
+---
+
+## Model Architecture
+
+![Architecture](assets/architecture.png)
 
 ---
 
@@ -114,7 +121,9 @@ pip install -r requirements.txt
 
 ## Dataset Setup
 
-Download the nuScenes mini dataset from:
+This project uses the nuScenes autonomous driving dataset.
+
+Download the dataset from:
 
 https://www.nuscenes.org/download
 
@@ -122,6 +131,20 @@ Place the dataset in:
 
 ```text
 C:\Users\archi\project\nuscenes
+```
+
+Dataset files are not included in this repository due to size restrictions.
+
+---
+
+## Pretrained Checkpoints
+
+Model checkpoints are not included in this repository due to file size limitations.
+
+You can train the model using:
+
+```bash
+python train.py
 ```
 
 ---
@@ -178,7 +201,7 @@ Handles:
 
 ### model.py
 Implements:
-- U-Net based OccupancyNet architecture
+- U-Net-based OccupancyNet architecture
 - Multi-class semantic segmentation
 
 ---
@@ -245,4 +268,3 @@ Contributors:
 ## License
 
 This project is intended for academic and research purposes.
-- `train.py`: Training loop.
